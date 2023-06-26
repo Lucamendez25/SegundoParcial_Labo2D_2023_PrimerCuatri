@@ -1,0 +1,139 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\ClasesCarniceria.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\ClasesCarniceria.csproj",
+        "projectName": "ClasesCarniceria",
+        "projectPath": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\ClasesCarniceria.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MACTrackBarLib.dll": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
+            "System.Resources.ResourceManager": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio.csproj",
+        "projectName": "SegundoParcialLaboratorio",
+        "projectPath": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio.csproj",
+        "packagesPath": "C:\\Users\\Luca\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\SegundoParcialLaboratorio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Luca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\ClasesCarniceria.csproj": {
+                "projectPath": "C:\\Users\\Luca\\source\\repos\\SegundoParcialLaboratorio\\Carniceria\\ClasesCarniceria.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

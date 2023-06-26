@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SegundoParcialLaboratorio", "SegundoParcialLaboratorio\SegundoParcialLaboratorio.csproj", "{AB35FA7E-3770-4FCC-9850-0368F73C987A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesCarniceria", "Carniceria\ClasesCarniceria.csproj", "{3145F62D-D335-40C8-A3BB-B1F786361749}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB35FA7E-3770-4FCC-9850-0368F73C987A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB35FA7E-3770-4FCC-9850-0368F73C987A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB35FA7E-3770-4FCC-9850-0368F73C987A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB35FA7E-3770-4FCC-9850-0368F73C987A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3145F62D-D335-40C8-A3BB-B1F786361749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3145F62D-D335-40C8-A3BB-B1F786361749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3145F62D-D335-40C8-A3BB-B1F786361749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3145F62D-D335-40C8-A3BB-B1F786361749}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C95C0744-146D-4B5C-8703-A33A5B4F8D9B}
+	EndGlobalSection
+EndGlobal

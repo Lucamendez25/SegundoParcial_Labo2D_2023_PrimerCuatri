@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="FormConfirmar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormCrearProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormAgradecimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormInformacionDelProceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMensajeError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormInformacionDeProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormDineroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormHeladera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormModificarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormNoIngresoLosDatosNecesarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormNoSuficienteStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormNoTieneDineroSuficiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormTicketFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormVenderProductoACliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
