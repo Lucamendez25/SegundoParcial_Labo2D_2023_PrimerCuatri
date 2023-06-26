@@ -46,7 +46,7 @@
             lblInfoProducto.Name = "lblInfoProducto";
             lblInfoProducto.Size = new Size(257, 24);
             lblInfoProducto.TabIndex = 0;
-            lblInfoProducto.Text = "Informacion del Producto:";
+            lblInfoProducto.Text = "Información del Producto:";
             // 
             // pictureBoxProducto
             // 
@@ -82,8 +82,9 @@
             Controls.Add(buttonCargarImagen);
             Controls.Add(pictureBoxProducto);
             Controls.Add(lblInfoProducto);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormInformacionDeProducto";
-            Text = "Form1";
+            Text = "INFORMACIÓN";
             FormClosed += FormInformacionDeProducto_FormClosed;
             Load += FormInformacionDeProducto_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBoxProducto).EndInit();

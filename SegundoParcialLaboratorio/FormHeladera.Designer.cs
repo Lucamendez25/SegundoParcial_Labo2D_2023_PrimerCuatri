@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHeladera));
             dataGridViewListaProductos = new DataGridView();
             buttonInformacionProducto = new Button();
@@ -58,39 +58,39 @@
             dataGridViewListaProductos.AllowUserToResizeColumns = false;
             dataGridViewListaProductos.AllowUserToResizeRows = false;
             dataGridViewListaProductos.BackgroundColor = Color.SkyBlue;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Blue;
-            dataGridViewCellStyle6.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.Blue;
+            dataGridViewCellStyle1.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewListaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.DeepSkyBlue;
-            dataGridViewCellStyle7.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle7.SelectionBackColor = Color.RoyalBlue;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dataGridViewListaProductos.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.DeepSkyBlue;
+            dataGridViewCellStyle2.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewListaProductos.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewListaProductos.GridColor = SystemColors.ActiveCaptionText;
             dataGridViewListaProductos.Location = new Point(127, 14);
             dataGridViewListaProductos.Margin = new Padding(4, 3, 4, 3);
             dataGridViewListaProductos.MultiSelect = false;
             dataGridViewListaProductos.Name = "dataGridViewListaProductos";
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.Blue;
-            dataGridViewCellStyle8.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            dataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            dataGridViewCellStyle9.BackColor = Color.LightSkyBlue;
-            dataGridViewCellStyle9.ForeColor = Color.Black;
-            dataGridViewListaProductos.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Blue;
+            dataGridViewCellStyle3.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = Color.LightSkyBlue;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewListaProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewListaProductos.RowTemplate.Height = 25;
             dataGridViewListaProductos.Size = new Size(192, 373);
             dataGridViewListaProductos.TabIndex = 0;
@@ -107,6 +107,8 @@
             buttonInformacionProducto.Text = "Informacion\r\nProducto\r\n";
             buttonInformacionProducto.UseVisualStyleBackColor = true;
             buttonInformacionProducto.Click += buttonInformacionProducto_Click;
+            buttonInformacionProducto.MouseEnter += buttonInformacionProducto_MouseEnter;
+            buttonInformacionProducto.MouseLeave += buttonInformacionProducto_MouseLeave;
             // 
             // buttonVenderACliente
             // 
@@ -119,19 +121,21 @@
             buttonVenderACliente.Text = "VENDER A \r\nUSUARIO\r\n\r\n";
             buttonVenderACliente.UseVisualStyleBackColor = true;
             buttonVenderACliente.Click += buttonVenderACliente_Click;
+            buttonVenderACliente.MouseEnter += buttonVenderACliente_MouseEnter;
+            buttonVenderACliente.MouseLeave += buttonVenderACliente_MouseLeave;
             // 
             // dataGridViewListaClientes
             // 
             dataGridViewListaClientes.BackgroundColor = Color.Khaki;
             dataGridViewListaClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.Yellow;
-            dataGridViewCellStyle10.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = Color.Gold;
-            dataGridViewCellStyle10.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dataGridViewListaClientes.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.Yellow;
+            dataGridViewCellStyle5.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = Color.Gold;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridViewListaClientes.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewListaClientes.GridColor = Color.Black;
             dataGridViewListaClientes.Location = new Point(492, 14);
             dataGridViewListaClientes.Margin = new Padding(4, 3, 4, 3);
@@ -170,6 +174,8 @@
             buttonReponerStock.Text = "Reponer\r\nStock\r\n\r\n";
             buttonReponerStock.UseVisualStyleBackColor = true;
             buttonReponerStock.Click += buttonReponerStock_Click;
+            buttonReponerStock.MouseEnter += buttonReponerStock_MouseEnter;
+            buttonReponerStock.MouseLeave += buttonReponerStock_MouseLeave;
             // 
             // numericUpDownKilos
             // 
@@ -191,6 +197,8 @@
             buttonAgregarProducto.Text = "Agregar\r\nProducto\r\n";
             buttonAgregarProducto.UseVisualStyleBackColor = true;
             buttonAgregarProducto.Click += buttonAgregarProducto_Click;
+            buttonAgregarProducto.MouseEnter += buttonAgregarProducto_MouseEnter;
+            buttonAgregarProducto.MouseLeave += buttonAgregarProducto_MouseLeave;
             // 
             // buttonEliminar
             // 
@@ -202,6 +210,8 @@
             buttonEliminar.Text = "Eliminar";
             buttonEliminar.UseVisualStyleBackColor = true;
             buttonEliminar.Click += buttonEliminar_Click;
+            buttonEliminar.MouseEnter += buttonEliminar_MouseEnter;
+            buttonEliminar.MouseLeave += buttonEliminar_MouseLeave;
             // 
             // buttonModificar
             // 
@@ -213,6 +223,8 @@
             buttonModificar.Text = "Modificar";
             buttonModificar.UseVisualStyleBackColor = true;
             buttonModificar.Click += buttonModificar_Click;
+            buttonModificar.MouseEnter += buttonModificar_MouseEnter;
+            buttonModificar.MouseLeave += buttonModificar_MouseLeave;
             // 
             // FormHeladera
             // 

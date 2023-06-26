@@ -18,6 +18,13 @@ namespace ClasesCarniceria
         }
         #region Metodos Usuario
 
+        /// <summary>
+        /// Corrobora si existe el usuario en la base de datos.
+        /// Si existe retorna ese usuario, sino devuelve null.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns>vendedor</returns>
         public static Vendedor LoguearUsuario(string email, string password)
         {
             Vendedor usuarioLogueado = null;
@@ -35,6 +42,12 @@ namespace ClasesCarniceria
             }
             return usuarioLogueado;
         }
+        /// <summary>
+        /// Valida que los campos email y password no sean null
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         private static bool ValidarCamposLogin(string email, string password)
         {
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -48,6 +61,13 @@ namespace ClasesCarniceria
 
         #region Metodos Cliente
 
+
+        
+        /// <summary>
+        ///  Llama a la base de datos, y le pide cada uno de los clientes
+        /// Y los almacena en una lista, para luego retornarla
+        /// </summary>
+        /// <returns>list de Clientes</returns>
         public static List<Cliente> ObtenerTodosLosClientesDeLaBaseDeDatos()
         {
             try
@@ -69,6 +89,13 @@ namespace ClasesCarniceria
                 throw;
             }
         }
+        /// <summary>
+        /// Calcula cuanto le tiene que cobrar al cliente
+        /// </summary>
+        /// <param name="unCliente">un tipo cliente</param>
+        /// <param name="totalCarrito">total de dinero en el carrito</param>
+        /// <param name="conRecarga">para saber si necesita recarga</param>
+        /// <returns>bool</returns>
         public static bool CalcularACobrarCliente(Cliente unCliente, double totalCarrito, bool conRecarga)
         {
             try
@@ -97,11 +124,21 @@ namespace ClasesCarniceria
 
         #region Metodos Vendedor
 
+        /// <summary>
+        /// Suma una venta al vendedor
+        /// </summary>
+        /// <param name="vendedor"></param>
         public static void SumarUnaVenta(Vendedor vendedor)
         {
             vendedor.Ventas += 1;
         }
-        public static Vendedor ActualizarDatosDelVendedor(Vendedor vendedor)
+        /// <summary>
+        /// Busca por Id al vendedor en la Base de Datos.
+        /// Y me lo devuelve si lo encontro.
+        /// </summary>
+        /// <param name="vendedor"></param>
+        /// <returns>Vendedor</returns>
+        public static Vendedor ObtenerDatosDelVendedor(Vendedor vendedor)
         {
             foreach (var item in accesoDatosUsuario.ObtenerListaDato())
             {
@@ -113,6 +150,11 @@ namespace ClasesCarniceria
             }
             return vendedor;
         }
+        /// <summary>
+        /// Busca al vendedor en la Base de Datos, y modifica la columna ventas
+        /// con el vendedor pasado como parametro
+        /// </summary>
+        /// <param name="vendedor"></param>
         public static void ModificarVentasDelVendedor(Vendedor vendedor)
         {
             foreach (var item in accesoDatosUsuario.ObtenerListaDato())
@@ -127,6 +169,11 @@ namespace ClasesCarniceria
         #endregion
 
         #region Métodos Producto
+
+        /// <summary>
+        /// Agrega un producto a la Base de Datos si no existe ya
+        /// </summary>
+        /// <param name="producto"></param>
         public static void AgregarProducto(Producto producto)
         {
             try
@@ -139,11 +186,15 @@ namespace ClasesCarniceria
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
+
+        /// <summary>
+        /// Verifica si ese producto ya existe en la Base de Datos
+        /// </summary>
+        /// <param name="codigoProducto"></param>
+        /// <returns></returns>
         public static Producto ProductoExisteEnBaseDeDatos(string codigoProducto)
         {
             try
@@ -167,6 +218,11 @@ namespace ClasesCarniceria
 
         }
 
+        /// <summary>
+        /// Elimina un producto de la Base de Datos
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static bool EliminarProductoDeLaBaseDeDatos(Producto producto)
         {
             try
@@ -188,6 +244,12 @@ namespace ClasesCarniceria
             }
 
         }
+
+        /// <summary>
+        /// Obtiene todas las opciones por tipo
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <returns>Un array de string, con cada una de las opciones encontradas</returns>
         public static string[] ObtenerOpcionesPorTipo(eTipoProducto tipo)
         {
             try
@@ -223,10 +285,21 @@ namespace ClasesCarniceria
             }
 
         }
+        /// <summary>
+        /// Le paso el nombre del producto
+        /// Me trae un producto, si encuentra por el nombre del producto en la Base de Datos
+        /// </summary>
+        /// <param name="nombre"></param>
+        /// <returns>Producto</returns>
         public static Producto ObtenerUnProductoDeLaBaseDeDatos(string nombre)
         {
             return accesoDatosProducto.ObtenerListaDato().FirstOrDefault(producto => producto.Nombre == nombre);
         }
+
+        /// <summary>
+        /// Me trae todos los productos de la Base de Datos
+        /// </summary>
+        /// <returns>Una lista con todos los Productos</returns>
         public static List<Producto> ObtenerTodosLosProductosDeLaBaseDeDatos()
         {
             try
@@ -245,6 +318,13 @@ namespace ClasesCarniceria
             }
         }
 
+        /// <summary>
+        /// Modifica el nombre de un producto
+        /// </summary>
+        /// <param name="codigoProducto">Codigo del producto</param>
+        /// <param name="nuevoNombre">Nombre al que le quiero cambiar</param>
+        /// <returns>true = Si logro modificarlo en la Base de Datos
+        /// False = Si no logro modificarlo en la Base de Datos</returns>
         public static bool ModificarProductoDeLaBaseDeDatos(string codigoProducto, string nuevoNombre)
         {
             try
@@ -264,7 +344,15 @@ namespace ClasesCarniceria
                 throw;
             }
         }
-
+        /// <summary>
+        /// Verifica que el producto exista en la venta
+        /// que se esta llevando a cabo.
+        /// En los detalles no exista.
+        /// Si existe, le retorna el detalle, que seria el producto
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public static DetalleVenta productoExistenteEnElCarrito(Venta venta, Producto producto)
         {
             try
@@ -279,10 +367,12 @@ namespace ClasesCarniceria
             {
                 throw;
             }
-
         }
 
-
+        /// <summary>
+        /// Resto el stock de los productos, con la venta que le pase
+        /// </summary>
+        /// <param name="venta"></param>
         public static void DisminuyoStock(Venta venta)
         {
             try
@@ -304,6 +394,13 @@ namespace ClasesCarniceria
             }
 
         }
+
+        /// <summary>
+        /// Disminuyo el stock. Esta es utilizada para la venta por unidad (Funcion utilizada por vendedor)
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <param name="peso"></param>
+        /// <returns></returns>
         public static bool DisminuyoStock(Producto producto, double peso)
         {
             try
@@ -328,6 +425,13 @@ namespace ClasesCarniceria
             }
 
         }
+
+        /// <summary>
+        /// Modifico stock en la Base de Datos 
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <param name="kilos"></param>
+        /// <returns></returns>
         public static bool SetearStock(Producto producto, double kilos)
         {
             try
@@ -342,6 +446,12 @@ namespace ClasesCarniceria
             }
         }
 
+        /// <summary>
+        /// Modifico el path de la imagen
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <param name="pathImagen"></param>
+        /// <returns></returns>
         public static bool SetearImagen(Producto producto, string pathImagen)
         {
             try

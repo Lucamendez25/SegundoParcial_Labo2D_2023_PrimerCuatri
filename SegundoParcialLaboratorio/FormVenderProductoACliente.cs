@@ -71,7 +71,7 @@ namespace PrimerParcialLaboratorio2023
                 Producto producto = (Producto)dataGridViewListaProductos.SelectedRows[0].DataBoundItem;
                 if (producto != null)
                 {
-                    if (Sistema.CalcularACobrarCliente(cliente, producto.ValorPorKilo, false)) 
+                    if (Sistema.CalcularACobrarCliente(cliente, producto.ValorPorKilo, false))
                     {
                         //lo hago de a uno, porque vendo por unidad
                         Sistema.DisminuyoStock(producto, producto.Stock -= 1);
@@ -85,13 +85,22 @@ namespace PrimerParcialLaboratorio2023
         }
         private void FormVenderProductoACliente_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (vendedorVendio == true) 
-            { 
+            if (vendedorVendio == true)
+            {
                 Sistema.SumarUnaVenta(vendedor);
                 Sistema.ModificarVentasDelVendedor(vendedor);
             }
             formHeladera.Show();
         }
 
+        private void buttonVender_MouseEnter(object sender, EventArgs e)
+        {
+            buttonVender.BackColor = Color.Gold;
+        }
+
+        private void buttonVender_MouseLeave(object sender, EventArgs e)
+        {
+            buttonVender.BackColor = Color.White;
+        }
     }
 }

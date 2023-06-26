@@ -292,7 +292,6 @@ namespace PrimerParcialLaboratorio2023
         {
             buttonFinalizarCompra.BackColor = Color.White;
         }
-
         private void buttonFinalizarCompra_MouseEnter(object sender, EventArgs e)
         {
             buttonFinalizarCompra.BackColor = Color.Gold;
@@ -319,7 +318,5 @@ namespace PrimerParcialLaboratorio2023
             // Actualizar la imagen de la publicidad en el PictureBox
             PictureBoxPublicidad.ImageLocation = publicidad.path;
         }
-
-
     }
 }

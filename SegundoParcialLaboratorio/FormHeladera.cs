@@ -44,7 +44,7 @@ namespace PrimerParcialLaboratorio2023
         }
         private void ActualizarVendedor()
         {
-            Sistema.ActualizarDatosDelVendedor(vendedor);
+            Sistema.ObtenerDatosDelVendedor(vendedor);
             lblInformacionVendedor.Text = vendedor.ObtenerNombreYVentasDelVendedor();
         }
         private void ActualizarListaDeProductos()
@@ -162,7 +162,6 @@ namespace PrimerParcialLaboratorio2023
                 {
                     throw new Exception();
                 }
-
             }
             catch (Exception ex)
             {
@@ -170,6 +169,7 @@ namespace PrimerParcialLaboratorio2023
             }
             finally
             {
+                numericUpDownKilos.Value = 0;
                 ActualizarListaDeProductos();
                 ActualizarDGVHeladera();
             }
@@ -197,15 +197,15 @@ namespace PrimerParcialLaboratorio2023
                 }
                 else
                 {
-                    if (formCrearProducto.DialogResult == DialogResult.Abort) 
+                    if (formCrearProducto.DialogResult == DialogResult.Abort)
                     {
-                        formInformacionDelProceso = new FormInformacionDelProceso("Se cancelo",false);
+                        formInformacionDelProceso = new FormInformacionDelProceso("Se cancelo", false);
                         formInformacionDelProceso.ShowDialog();
                     }
-                    else 
-                    { 
+                    else
+                    {
                         formInformacionDelProceso = new FormInformacionDelProceso(false);
-                        formInformacionDelProceso.ShowDialog();                    
+                        formInformacionDelProceso.ShowDialog();
                     }
                 }
             }
@@ -275,7 +275,7 @@ namespace PrimerParcialLaboratorio2023
                 formInformacionDelProceso = new FormInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
                 formInformacionDelProceso.ShowDialog();
             }
-            catch (NoLlenoTodosLosCamposException ex) 
+            catch (NoLlenoTodosLosCamposException ex)
             {
                 FormInformacionDelProceso formInformacionDelProceso = new FormInformacionDelProceso(ex.Message, false);
                 formInformacionDelProceso.ShowDialog();
@@ -283,7 +283,67 @@ namespace PrimerParcialLaboratorio2023
             catch (Exception)
             {
                 throw;
-            }   
+            }
+        }
+
+        private void buttonInformacionProducto_MouseEnter(object sender, EventArgs e)
+        {
+            buttonInformacionProducto.BackColor = Color.Gold;
+        }
+
+        private void buttonInformacionProducto_MouseLeave(object sender, EventArgs e)
+        {
+            buttonInformacionProducto.BackColor = Color.White;
+        }
+
+        private void buttonAgregarProducto_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAgregarProducto.BackColor = Color.Gold;
+        }
+
+        private void buttonAgregarProducto_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAgregarProducto.BackColor = Color.White;
+        }
+
+        private void buttonEliminar_MouseEnter(object sender, EventArgs e)
+        {
+            buttonEliminar.BackColor = Color.Gold;
+        }
+
+        private void buttonEliminar_MouseLeave(object sender, EventArgs e)
+        {
+            buttonEliminar.BackColor = Color.White;
+        }
+
+        private void buttonModificar_MouseEnter(object sender, EventArgs e)
+        {
+            buttonModificar.BackColor = Color.Gold;
+        }
+
+        private void buttonModificar_MouseLeave(object sender, EventArgs e)
+        {
+            buttonModificar.BackColor = Color.White;
+        }
+
+        private void buttonReponerStock_MouseEnter(object sender, EventArgs e)
+        {
+            buttonReponerStock.BackColor = Color.Gold;
+        }
+
+        private void buttonReponerStock_MouseLeave(object sender, EventArgs e)
+        {
+            buttonReponerStock.BackColor = Color.White;
+        }
+
+        private void buttonVenderACliente_MouseEnter(object sender, EventArgs e)
+        {
+            buttonVenderACliente.BackColor = Color.Gold;
+        }
+
+        private void buttonVenderACliente_MouseLeave(object sender, EventArgs e)
+        {
+            buttonVenderACliente.BackColor = Color.White;
         }
     }
 }

@@ -79,6 +79,8 @@
             buttonVender.Text = "Vender";
             buttonVender.UseVisualStyleBackColor = true;
             buttonVender.Click += buttonVender_Click;
+            buttonVender.MouseEnter += buttonVender_MouseEnter;
+            buttonVender.MouseLeave += buttonVender_MouseLeave;
             // 
             // pictureBox1
             // 
