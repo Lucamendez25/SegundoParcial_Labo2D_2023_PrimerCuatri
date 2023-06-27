@@ -257,7 +257,6 @@ namespace ClasesCarniceria
             }
             catch (Exception)
             {
-
                 throw;
             }
 

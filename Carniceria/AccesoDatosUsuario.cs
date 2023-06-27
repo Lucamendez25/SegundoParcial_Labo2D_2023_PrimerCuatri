@@ -11,6 +11,10 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosUsuario : AccesoDatosBase
     {
+        /// <summary>
+        /// Obtiene la lista de Vendedores de la Base de Datos
+        /// </summary>
+        /// <returns></returns>
         public List<Vendedor> ObtenerListaDato()
         {
             List<Vendedor> lista = new List<Vendedor>();
@@ -72,7 +76,7 @@ namespace ClasesCarniceria
 
             return lista;
         }
-        public bool AgregarDato(Vendedor usuario)
+        public bool AgregarDato(Usuario usuario)
         {
             bool rta = true;
             try
@@ -107,7 +111,7 @@ namespace ClasesCarniceria
             }
             return rta;
         }
-        public bool ModificarDato(Vendedor usuario)
+        public bool ModificarDato(Usuario usuario)
         {
             bool rta = true;
 

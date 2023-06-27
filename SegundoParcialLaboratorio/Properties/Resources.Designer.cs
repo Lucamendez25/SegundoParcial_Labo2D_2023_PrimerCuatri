@@ -73,9 +73,29 @@ namespace SegundoParcialLaboratorio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Imagen_MUUUCHACHOS {
+            get {
+                object obj = ResourceManager.GetObject("Imagen MUUUCHACHOS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MerceLuca {
             get {
                 object obj = ResourceManager.GetObject("MerceLuca", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PosibleImagen1 {
+            get {
+                object obj = ResourceManager.GetObject("PosibleImagen1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

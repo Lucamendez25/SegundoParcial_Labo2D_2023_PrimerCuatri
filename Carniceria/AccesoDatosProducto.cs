@@ -10,6 +10,10 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosProducto : AccesoDatosBase
     {
+        /// <summary>
+        /// Retorna la lista de Productos de la Base de Datos
+        /// </summary>
+        /// <returns></returns>
         public List<Producto> ObtenerListaDato()
         {
             List<Producto> lista = new List<Producto>();

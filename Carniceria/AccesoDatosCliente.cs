@@ -11,6 +11,11 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosCliente : AccesoDatosBase
     {
+        /// <summary>
+        /// Retorna un cliente de la Base de Datos
+        /// </summary>
+        /// <param name="cliente"></param>
+        /// <returns></returns>
         public bool ObtenerDato(Cliente cliente)
         {
             bool retorno = true;
@@ -49,6 +54,13 @@ namespace ClasesCarniceria
 
             return retorno;
         }
+
+        /// <summary>
+        /// Modifica el dinero de un cliente de la Base De Datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="dinero"></param>
+        /// <returns></returns>
         public bool ModificarDato(int id, double dinero)
         {
             bool rta = true;

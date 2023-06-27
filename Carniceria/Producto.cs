@@ -27,12 +27,9 @@ namespace ClasesCarniceria
         public double ValorPorKilo { get => valorPorKilo; set => valorPorKilo = value; }
         public string ImagenProducto { get; set; }
         public double Stock { get => stock; set => stock = value; }
-
-
         public Producto()
         {
         }
-
         public Producto(string nombre, eTipoProducto tipo)
         {
             this.nombre = nombre;

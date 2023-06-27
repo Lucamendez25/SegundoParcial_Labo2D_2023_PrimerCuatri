@@ -60,13 +60,6 @@ namespace PrimerParcialLaboratorio2023
         {
             this.Show();
         }
-
-        //private void buttonCrearCuenta_Click(object sender, EventArgs e)
-        //{
-        //    FormCrearCuenta formCrearCuenta = new FormCrearCuenta(this);
-        //    formCrearCuenta.Show();
-        //}
-
         private void radioButtonCliente_CheckedChanged(object sender, EventArgs e)
         {
             this.textBoxEmail.Text = "luca@gmail.com";

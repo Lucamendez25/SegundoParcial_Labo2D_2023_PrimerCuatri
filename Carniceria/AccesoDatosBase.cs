@@ -26,6 +26,10 @@ namespace ClasesCarniceria
         {
             this.conexion = new SqlConnection(AccesoDatosBase.cadena_conexion);
         }
+        /// <summary>
+        /// Prueba si se pudo conectar a la Base de Datos
+        /// </summary>
+        /// <returns></returns>
         public bool ProbarConexion()
         {
             bool retorno = true;

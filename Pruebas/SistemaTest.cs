@@ -6,6 +6,20 @@ namespace Pruebas
     public class SistemaTest
     {
         [TestMethod]
+        public void RetornaTrue_EnCasoQueSePuedaConectar_ALaBaseDeDatos()
+        {
+            //Arrange - Preparar el caso de Prueba
+            //Hardcodeo un Cliente Activo
+            bool seConecto = false;
+            AccesoDatosBase accesoDatosBase = new AccesoDatosProducto();
+
+            //Act - Invocar al método a probar
+            seConecto = accesoDatosBase.ProbarConexion();
+            //Assert - verifico que el resultado sea el esperado
+            Assert.IsTrue(seConecto);
+        }
+
+        [TestMethod]
         public void RetornaUsuarioDelTipoCliente_SiEncuentraEnLaBaseDeDatos_CoincideElMailYPassword()
         {
             //Arrange - Preparar el caso de Prueba
@@ -79,6 +93,5 @@ namespace Pruebas
             //Assert - verifico que el resultado sea el esperado
             Assert.IsFalse(resultado);
         }
-
     }
 }

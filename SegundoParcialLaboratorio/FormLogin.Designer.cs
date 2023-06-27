@@ -38,8 +38,6 @@
             radioButtonVendedor = new RadioButton();
             radioButtonCliente = new RadioButton();
             labelMensajeError = new Label();
-            buttonCrearCuenta = new Button();
-            labelTitulo = new Label();
             labelEstrellas = new Label();
             groupBoxTipoUsuario.SuspendLayout();
             SuspendLayout();
@@ -49,7 +47,7 @@
             labelEmail.AutoSize = true;
             labelEmail.BackColor = Color.Transparent;
             labelEmail.Font = new Font("Mongolian Baiti", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelEmail.Location = new Point(340, 135);
+            labelEmail.Location = new Point(323, 121);
             labelEmail.Margin = new Padding(4, 0, 4, 0);
             labelEmail.Name = "labelEmail";
             labelEmail.Size = new Size(49, 16);
@@ -61,7 +59,7 @@
             labelPassword.AutoSize = true;
             labelPassword.BackColor = Color.Transparent;
             labelPassword.Font = new Font("Mongolian Baiti", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            labelPassword.Location = new Point(323, 195);
+            labelPassword.Location = new Point(304, 180);
             labelPassword.Margin = new Padding(4, 0, 4, 0);
             labelPassword.Name = "labelPassword";
             labelPassword.Size = new Size(88, 16);
@@ -70,7 +68,7 @@
             // 
             // textBoxEmail
             // 
-            textBoxEmail.Location = new Point(281, 158);
+            textBoxEmail.Location = new Point(264, 141);
             textBoxEmail.Margin = new Padding(4);
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.PlaceholderText = "lala123@gmail.com";
@@ -79,7 +77,7 @@
             // 
             // textBoxPassword
             // 
-            textBoxPassword.Location = new Point(281, 215);
+            textBoxPassword.Location = new Point(264, 200);
             textBoxPassword.Margin = new Padding(4);
             textBoxPassword.Name = "textBoxPassword";
             textBoxPassword.PasswordChar = '*';
@@ -90,10 +88,10 @@
             // buttonIngresar
             // 
             buttonIngresar.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            buttonIngresar.Location = new Point(295, 249);
+            buttonIngresar.Location = new Point(304, 234);
             buttonIngresar.Margin = new Padding(4);
             buttonIngresar.Name = "buttonIngresar";
-            buttonIngresar.Size = new Size(144, 34);
+            buttonIngresar.Size = new Size(93, 34);
             buttonIngresar.TabIndex = 4;
             buttonIngresar.Text = "Ingresar";
             buttonIngresar.UseVisualStyleBackColor = true;
@@ -107,7 +105,7 @@
             groupBoxTipoUsuario.Controls.Add(radioButtonVendedor);
             groupBoxTipoUsuario.Controls.Add(radioButtonCliente);
             groupBoxTipoUsuario.Font = new Font("Mongolian Baiti", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBoxTipoUsuario.Location = new Point(116, 158);
+            groupBoxTipoUsuario.Location = new Point(102, 135);
             groupBoxTipoUsuario.Margin = new Padding(4);
             groupBoxTipoUsuario.Name = "groupBoxTipoUsuario";
             groupBoxTipoUsuario.Padding = new Padding(4);
@@ -148,38 +146,13 @@
             labelMensajeError.BackColor = Color.Yellow;
             labelMensajeError.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             labelMensajeError.ForeColor = Color.Black;
-            labelMensajeError.Location = new Point(116, 245);
+            labelMensajeError.Location = new Point(102, 225);
             labelMensajeError.Margin = new Padding(4, 0, 4, 0);
             labelMensajeError.Name = "labelMensajeError";
             labelMensajeError.Size = new Size(68, 16);
             labelMensajeError.TabIndex = 6;
             labelMensajeError.Text = "Mensaje: ";
             labelMensajeError.Visible = false;
-            // 
-            // buttonCrearCuenta
-            // 
-            buttonCrearCuenta.Font = new Font("Yu Gothic UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            buttonCrearCuenta.Location = new Point(447, 249);
-            buttonCrearCuenta.Margin = new Padding(4);
-            buttonCrearCuenta.Name = "buttonCrearCuenta";
-            buttonCrearCuenta.Size = new Size(113, 34);
-            buttonCrearCuenta.TabIndex = 7;
-            buttonCrearCuenta.Text = "Crear Cuenta\r\n";
-            buttonCrearCuenta.UseVisualStyleBackColor = true;
-            buttonCrearCuenta.MouseEnter += buttonCrearCuenta_MouseEnter;
-            buttonCrearCuenta.MouseLeave += buttonCrearCuenta_MouseLeave;
-            // 
-            // labelTitulo
-            // 
-            labelTitulo.AutoSize = true;
-            labelTitulo.BackColor = Color.Transparent;
-            labelTitulo.Font = new Font("Comic Sans MS", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitulo.ForeColor = SystemColors.ButtonFace;
-            labelTitulo.Location = new Point(162, 1);
-            labelTitulo.Name = "labelTitulo";
-            labelTitulo.Size = new Size(458, 134);
-            labelTitulo.TabIndex = 8;
-            labelTitulo.Text = "\"MUUUCHACHOS\"\r\n  CARNICERIA\r\n";
             // 
             // labelEstrellas
             // 
@@ -198,12 +171,10 @@
             AutoScaleDimensions = new SizeF(9F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = SegundoParcialLaboratorio.Properties.Resources.Imagen_MUUUCHACHOS;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(731, 445);
             Controls.Add(labelEstrellas);
-            Controls.Add(labelTitulo);
-            Controls.Add(buttonCrearCuenta);
             Controls.Add(labelMensajeError);
             Controls.Add(groupBoxTipoUsuario);
             Controls.Add(buttonIngresar);
@@ -238,7 +209,6 @@
         private RadioButton radioButtonCliente;
         private Label labelMensajeError;
         private Button buttonCrearCuenta;
-        private Label labelTitulo;
         private Label labelEstrellas;
     }
 }

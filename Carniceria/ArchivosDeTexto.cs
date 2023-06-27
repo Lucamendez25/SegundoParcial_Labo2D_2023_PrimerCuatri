@@ -13,8 +13,6 @@ namespace ClasesCarniceria
         public static StreamReader sr;
         public static string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Archivos");
 
-
-
         /// <summary>
         /// Genera el directorio para guardar el archivo
         /// </summary>

@@ -11,6 +11,11 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosVendedor : AccesoDatosBase
     {
+        /// <summary>
+        /// Obtiene un Vendedor de la Base De Datos
+        /// </summary>
+        /// <param name="vendedor"></param>
+        /// <returns></returns>
         public bool ObtenerDato(Vendedor vendedor)
         {
             bool retorno = true;
@@ -49,6 +54,13 @@ namespace ClasesCarniceria
 
             return retorno;
         }
+
+        /// <summary>
+        /// Modifica un vendedor de la Base De Datos
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="ventas"></param>
+        /// <returns></returns>
         public bool ModificarDato(int id, int ventas)
         {
             bool rta = true;

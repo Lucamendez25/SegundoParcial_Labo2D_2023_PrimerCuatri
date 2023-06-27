@@ -11,6 +11,11 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosStockProducto : AccesoDatosBase
     {
+        /// <summary>
+        /// Agrega stock a un Producto en la Base de Datos
+        /// </summary>
+        /// <param name="producto"></param>
+        /// <returns></returns>
         public bool AgregarDato(Producto producto)
         {
             bool rta = true;
@@ -50,6 +55,13 @@ namespace ClasesCarniceria
             }
             return rta;
         }
+
+        /// <summary>
+        /// Modifica el stock del producto en la Base de Datos
+        /// </summary>
+        /// <param name="codigoProducto"></param>
+        /// <param name="stock"></param>
+        /// <returns></returns>
         public bool ModificarDato(string codigoProducto, double stock)
         {
             bool rta = true;
@@ -92,6 +104,11 @@ namespace ClasesCarniceria
             return rta;
         }
 
+        /// <summary>
+        /// Elimina un producto de la tabla stock
+        /// </summary>
+        /// <param name="codigoProducto"></param>
+        /// <returns></returns>
         public bool EliminarDato(string codigoProducto)
         {
             bool rta = true;

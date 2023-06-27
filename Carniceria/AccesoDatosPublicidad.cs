@@ -10,6 +10,10 @@ namespace ClasesCarniceria
 {
     public class AccesoDatosPublicidad : AccesoDatosBase
     {
+        /// <summary>
+        /// Retorna la lista de publicidades de la Base de Datos
+        /// </summary>
+        /// <returns></returns>
         public List<Publicidad> ObtenerListaDato()
         {
             List<Publicidad> lista = new List<Publicidad>();
