@@ -29,6 +29,10 @@ namespace SegundoParcialLaboratorio
                 string nombre = this.textBoxNombreProducto.Text;
                 string codigoProducto = this.textBoxCodigoProducto.Text;
                 bool seParseo = Double.TryParse(this.textBoxValorPorKilo.Text, out double precioPorKilo);
+                if (seParseo == false) 
+                {
+                    throw new Exception();
+                }
 
                 if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(codigoProducto) || seParseo == false)
                 {
@@ -42,9 +46,13 @@ namespace SegundoParcialLaboratorio
             {
                 throw new NoLlenoTodosLosCamposException();
             }
+            catch (NoLlenoTodosLosCamposException)
+            {
+                throw;
+            }
             catch (Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Intento ingresar letras en el text ValorPorKilo");
             }
         }
     }

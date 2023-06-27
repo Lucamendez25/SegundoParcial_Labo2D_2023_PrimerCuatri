@@ -55,8 +55,8 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (ArchivosDeTexto.sw != null)
-                    ArchivosDeTexto.sw.Close();
+                if (sw != null)
+                    sw.Close();
             }
             return agrego;
         }

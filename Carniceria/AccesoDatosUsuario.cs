@@ -16,14 +16,14 @@ namespace ClasesCarniceria
             List<Vendedor> lista = new List<Vendedor>();
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.CommandType = CommandType.Text;
-                this.comando.Connection = this.conexion;
-                this.comando.CommandText = "SELECT * FROM dbo.Usuarios";
+                comando = new SqlCommand();
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                comando.CommandText = "SELECT * FROM dbo.Usuarios";
 
-                this.conexion.Open();
+                conexion.Open();
 
-                this.lector = comando.ExecuteReader();
+                lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
@@ -37,7 +37,7 @@ namespace ClasesCarniceria
                                               lector["Email"].ToString(),
                                               lector["Password_"].ToString()));
                     }
-                    else 
+                    else
                     {
 
 
@@ -51,9 +51,9 @@ namespace ClasesCarniceria
                                                         lector["Password_"].ToString());
                         lista.Add(vendedor);
 
-                                              
+
                     }
-                    
+
                 }
 
                 lector.Close();
@@ -64,9 +64,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
 
@@ -77,17 +77,17 @@ namespace ClasesCarniceria
             bool rta = true;
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.CommandType = CommandType.Text;
-                this.comando.Connection = this.conexion;
-                this.comando.CommandText = "INSERT INTO dbo.Usuarios (Nombre, Apellido) VALUES (@Nombre, @Apellido)";
+                comando = new SqlCommand();
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                comando.CommandText = "INSERT INTO dbo.Usuarios (Nombre, Apellido) VALUES (@Nombre, @Apellido)";
 
-                this.comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
-                this.comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
                 if (filasAfectadas == 0)
                 {
                     rta = false;
@@ -100,9 +100,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
             return rta;
@@ -113,22 +113,22 @@ namespace ClasesCarniceria
 
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.Parameters.AddWithValue("@Id", usuario.Id);
-                this.comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
-                this.comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                comando = new SqlCommand();
+                comando.Parameters.AddWithValue("@Id", usuario.Id);
+                comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                comando.Parameters.AddWithValue("@Apellido", usuario.Apellido);
 
                 string sql = "UPDATE dbo.Personas_Ejemplo_1 ";
                 sql += "SET Nombre = @Nombre, Apellido = @Apellido ";
                 sql += "WHERE Id = @Id";
 
-                this.comando.CommandType = CommandType.Text;
-                this.comando.CommandText = sql;
-                this.comando.Connection = this.conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Connection = conexion;
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
 
                 if (filasAfectadas == 0)
                 {
@@ -142,9 +142,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
 
@@ -156,20 +156,20 @@ namespace ClasesCarniceria
 
             try
             {
-                this.comando = new SqlCommand();
+                comando = new SqlCommand();
 
-                this.comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@id", id);
 
                 string sql = "DELETE FROM dbo.Personas_Ejemplo_1 ";
                 sql += "WHERE ID = @id";
 
-                this.comando.CommandType = CommandType.Text;
-                this.comando.CommandText = sql;
-                this.comando.Connection = this.conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Connection = conexion;
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
 
                 if (filasAfectadas == 0)
                 {
@@ -182,9 +182,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
             return rta;

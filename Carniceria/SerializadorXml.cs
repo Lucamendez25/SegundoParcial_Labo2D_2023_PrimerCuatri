@@ -21,8 +21,8 @@ namespace ClasesCarniceria
         /// <param name="archivo"></param>
         public SerializadorXml(string archivo)
         {
-            this.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            this.path += "\\" + archivo;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += "\\" + archivo;
         }
 
         /// <summary>
@@ -34,10 +34,10 @@ namespace ClasesCarniceria
             T aux = new T();
             try
             {
-                using (this.reader = new StreamReader(this.path))
+                using (reader = new StreamReader(path))
                 {
-                    this.serializer = new XmlSerializer(typeof(T));
-                    aux = (T)this.serializer.Deserialize(this.reader);
+                    serializer = new XmlSerializer(typeof(T));
+                    aux = (T)serializer.Deserialize(reader);
                 }
             }
             catch (Exception)
@@ -56,11 +56,11 @@ namespace ClasesCarniceria
             bool retorno = false;
             try
             {
-                using (this.writer = new StreamWriter(this.path))
+                using (writer = new StreamWriter(path))
                 {
-                    this.serializer = new XmlSerializer(typeof(T));
+                    serializer = new XmlSerializer(typeof(T));
 
-                    this.serializer.Serialize(this.writer, item);
+                    serializer.Serialize(writer, item);
                 }
                 retorno = true;
             }

@@ -23,11 +23,13 @@ namespace PrimerParcialLaboratorio2023
         bool vendedorVendio = false;
         private Action mostrarFormNoHayStock;
         private Action mostrarFormNoTieneDineroSuficiente;
+        private Action mostrarFormNoIngresoTodosLosDatosNecesarios;
         private Action actualizarTodo;
         private delegate Producto ObtenerProductoDelegate();
         public FormVenderProductoACliente()
         {
             InitializeComponent();
+            mostrarFormNoIngresoTodosLosDatosNecesarios = MostrarFormNoIngresoTodosLosDatos;
             mostrarFormNoHayStock = MostrarFormNoHayStock;
             mostrarFormNoTieneDineroSuficiente = MostrarFormNoTieneDineroSuficiente;
             actualizarTodo = ActualizarTodo;
@@ -77,33 +79,31 @@ namespace PrimerParcialLaboratorio2023
                     Producto producto = ObtenerProductoSeleccionado();
                     double kilos = (double)numericUpDownKilos.Value;
                     DetalleVenta detalleVenta = new DetalleVenta();
-                    if (kilos <= 0)
+                    if (kilos <= 0 || producto == null)
                     {
                         throw new NullReferenceException();
                     }
-                    if (producto != null)
+                    detalleVenta.Producto = producto;
+                    detalleVenta.Peso = kilos;
+                    if (!detalleVenta.Producto.VerificoQueHayaStock(detalleVenta.Producto, detalleVenta.Peso))
                     {
-                        detalleVenta.Producto = producto;
-                        detalleVenta.Peso = kilos;
-                        if (!detalleVenta.Producto.VerificoQueHayaStock(detalleVenta.Producto, detalleVenta.Peso))
-                        {
-                            throw new NoHayStockException();
-                        }
-                        venta.Detalles.Add(detalleVenta);
-
-                        if (!Sistema.CalcularACobrarCliente(cliente, detalleVenta.Total, false))
-                        {
-                            throw new NoTieneDineroSuficienteException();
-                        }
-                        Sistema.DisminuyoStock(venta);
-                        actualizarTodo.Invoke();
-                        venta.Detalles.Clear();
+                        throw new NoHayStockException();
                     }
+                    venta.Detalles.Add(detalleVenta);
+
+                    if (!Sistema.CalcularACobrarCliente(cliente, detalleVenta.Total, false))
+                    {
+                        throw new NoTieneDineroSuficienteException();
+                    }
+                    Sistema.DisminuyoStock(venta);
+                    Sistema.GuardoVentaEnUnArchivo(venta, cliente);
+                    actualizarTodo.Invoke();
+                    venta.Detalles.Clear();
                 }
             }
             catch (NullReferenceException)
             {
-                throw;
+                mostrarFormNoIngresoTodosLosDatosNecesarios.Invoke();
             }
             catch(NoTieneDineroSuficienteException) 
             {
@@ -115,7 +115,7 @@ namespace PrimerParcialLaboratorio2023
             }
             catch (Exception)
             {
-                throw;
+                mostrarFormNoIngresoTodosLosDatosNecesarios.Invoke();
             }
         }
         private void FormVenderProductoACliente_Load(object sender, EventArgs e)
@@ -133,6 +133,7 @@ namespace PrimerParcialLaboratorio2023
             numericUpDownKilos.Value = 0;
             Sistema.SumarUnaVenta(vendedor);
             Sistema.ModificarVentasDelVendedor(vendedor);
+           
         }
         private void MostrarFormNoTieneDineroSuficiente()
         {
@@ -144,6 +145,13 @@ namespace PrimerParcialLaboratorio2023
             Producto producto = ObtenerProductoSeleccionado();
             FormNoSuficienteStock formNoSuficienteStock = new FormNoSuficienteStock(producto);
             formNoSuficienteStock.ShowDialog();
+        }
+
+        private void MostrarFormNoIngresoTodosLosDatos()
+        {
+            Producto producto = ObtenerProductoSeleccionado();
+            FormNoIngresoLosDatosNecesarios formNoIngresoLosDatosNecesarios = new FormNoIngresoLosDatosNecesarios();
+            formNoIngresoLosDatosNecesarios.ShowDialog();
         }
 
 

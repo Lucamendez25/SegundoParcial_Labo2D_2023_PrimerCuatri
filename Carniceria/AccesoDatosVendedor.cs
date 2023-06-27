@@ -16,16 +16,16 @@ namespace ClasesCarniceria
             bool retorno = true;
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.CommandType = CommandType.Text;
-                this.comando.Connection = this.conexion;
-                this.comando.Parameters.AddWithValue("@Id", vendedor.Id);
+                comando = new SqlCommand();
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                comando.Parameters.AddWithValue("@Id", vendedor.Id);
 
-                this.comando.CommandText = "SELECT * FROM dbo.Usuarios u LEFT JOIN dbo.VentasVendedor v ON u.ID = v.ID WHERE u.ID = @Id";
+                comando.CommandText = "SELECT * FROM dbo.Usuarios u LEFT JOIN dbo.VentasVendedor v ON u.ID = v.ID WHERE u.ID = @Id";
 
-                this.conexion.Open();
+                conexion.Open();
 
-                this.lector = comando.ExecuteReader();
+                lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
@@ -41,9 +41,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
 
@@ -54,21 +54,21 @@ namespace ClasesCarniceria
             bool rta = true;
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.Parameters.AddWithValue("@Id", id);
-                this.comando.Parameters.AddWithValue("@Ventas", ventas);
+                comando = new SqlCommand();
+                comando.Parameters.AddWithValue("@Id", id);
+                comando.Parameters.AddWithValue("@Ventas", ventas);
 
                 string sql = "UPDATE dbo.VentasVendedor ";
                 sql += "SET Ventas = @ventas ";
                 sql += "WHERE Id = @Id";
 
-                this.comando.CommandType = CommandType.Text;
-                this.comando.CommandText = sql;
-                this.comando.Connection = this.conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Connection = conexion;
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
 
                 if (filasAfectadas == 0)
                 {
@@ -81,9 +81,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
             return rta;

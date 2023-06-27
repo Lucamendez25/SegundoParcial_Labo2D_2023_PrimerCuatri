@@ -20,8 +20,8 @@ namespace ClasesCarniceria
         /// <param name="archivo"></param>
         public SerializadorJson(string archivo)
         {
-            this.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            this.path += "\\" + archivo;
+            path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            path += "\\" + archivo;
         }
 
         /// <summary>
@@ -33,9 +33,9 @@ namespace ClasesCarniceria
             T aux = new T();
             try
             {
-                using (this.reader = new StreamReader(this.path))
+                using (reader = new StreamReader(path))
                 {
-                    string json = this.reader.ReadToEnd();
+                    string json = reader.ReadToEnd();
 
                     aux = JsonSerializer.Deserialize<T>(json);
                 }
@@ -57,12 +57,12 @@ namespace ClasesCarniceria
             bool retorno = false;
             try
             {
-                using (this.writer = new StreamWriter(this.path))
+                using (writer = new StreamWriter(path))
                 {
 
                     string json = JsonSerializer.Serialize(objeto);
 
-                    this.writer.Write(json);
+                    writer.Write(json);
                     retorno = true;
                 }
             }

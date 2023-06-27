@@ -16,21 +16,21 @@ namespace ClasesCarniceria
             bool rta = true;
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.CommandType = CommandType.Text;
-                this.comando.Connection = this.conexion;
+                comando = new SqlCommand();
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
 
-                this.comando.Parameters.AddWithValue("@CodigoProducto", producto.CodigoProducto);
-                this.comando.Parameters.AddWithValue("@Stock", 0);
+                comando.Parameters.AddWithValue("@CodigoProducto", producto.CodigoProducto);
+                comando.Parameters.AddWithValue("@Stock", 0);
 
 
-                this.comando.CommandText = "INSERT INTO dbo.Stock_Productos (Codigo_Producto, Stock) " +
+                comando.CommandText = "INSERT INTO dbo.Stock_Productos (Codigo_Producto, Stock) " +
                     "VALUES (@CodigoProducto,@Stock)";
 
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
                 if (filasAfectadas == 0)
                 {
                     rta = false;
@@ -43,9 +43,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
             return rta;
@@ -55,22 +55,22 @@ namespace ClasesCarniceria
             bool rta = true;
             try
             {
-                this.comando = new SqlCommand();
-                this.comando.Parameters.AddWithValue("@codigoProducto", codigoProducto);
-                this.comando.Parameters.AddWithValue("@stock", stock);
+                comando = new SqlCommand();
+                comando.Parameters.AddWithValue("@codigoProducto", codigoProducto);
+                comando.Parameters.AddWithValue("@stock", stock);
 
                 //SELECT* FROM dbo.Productos p INNER JOIN dbo.Stock_Productos s ON p.CODIGO_PRODUCTO = s.CODIGO_PRODUCTO;
                 string sql = "UPDATE dbo.Stock_Productos ";
                 sql += "SET Stock = @stock ";
                 sql += "WHERE Codigo_Producto = @codigoProducto";
 
-                this.comando.CommandType = CommandType.Text;
-                this.comando.CommandText = sql;
-                this.comando.Connection = this.conexion;
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Connection = conexion;
 
-                this.conexion.Open();
+                conexion.Open();
 
-                int filasAfectadas = this.comando.ExecuteNonQuery();
+                int filasAfectadas = comando.ExecuteNonQuery();
 
                 if (filasAfectadas == 0)
                 {
@@ -83,12 +83,52 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
 
+            return rta;
+        }
+
+        public bool EliminarDato(string codigoProducto)
+        {
+            bool rta = true;
+
+            try
+            {
+                comando = new SqlCommand();
+
+                comando.Parameters.AddWithValue("@CodigoProducto", codigoProducto);
+
+                string sql = "DELETE FROM dbo.Stock_Productos ";
+                sql += " WHERE Codigo_Producto = @CodigoProducto";
+
+                comando.CommandType = CommandType.Text;
+                comando.CommandText = sql;
+                comando.Connection = conexion;
+
+                conexion.Open();
+
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                if (filasAfectadas == 0)
+                {
+                    rta = false;
+                }
+            }
+            catch (Exception)
+            {
+                rta = false;
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
             return rta;
         }
     }

@@ -179,7 +179,7 @@ namespace PrimerParcialLaboratorio2023
                 ActualizarListaDeProductos();
                 ActualizarDGVHeladera();
             }
-            catch (ArgumentOutOfRangeException) 
+            catch (ArgumentOutOfRangeException)
             {
                 string mensajeFallo = null;
                 MostrarInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);

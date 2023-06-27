@@ -45,14 +45,14 @@ namespace ClasesCarniceria
             this.valorPorKilo = valorPorKilo;
         }
 
-        public bool VerificoQueHayaStock(Producto producto, double peso) 
+        public bool VerificoQueHayaStock(Producto producto, double peso)
         {
-            if (producto.Stock >= peso) 
+            if (producto.Stock >= peso)
             {
                 return true;
             }
             return false;
         }
- 
+
     }
 }

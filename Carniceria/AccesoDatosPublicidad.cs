@@ -16,15 +16,15 @@ namespace ClasesCarniceria
 
             try
             {
-                this.comando = new SqlCommand();
+                comando = new SqlCommand();
 
-                this.comando.CommandType = CommandType.Text;
-                this.comando.Connection = this.conexion;
-                this.comando.CommandText = "SELECT * FROM dbo.Publicidad";
+                comando.CommandType = CommandType.Text;
+                comando.Connection = conexion;
+                comando.CommandText = "SELECT * FROM dbo.Publicidad";
 
-                this.conexion.Open();
+                conexion.Open();
 
-                this.lector = comando.ExecuteReader();
+                lector = comando.ExecuteReader();
 
                 while (lector.Read())
                 {
@@ -43,9 +43,9 @@ namespace ClasesCarniceria
             }
             finally
             {
-                if (this.conexion.State == ConnectionState.Open)
+                if (conexion.State == ConnectionState.Open)
                 {
-                    this.conexion.Close();
+                    conexion.Close();
                 }
             }
             return lista;

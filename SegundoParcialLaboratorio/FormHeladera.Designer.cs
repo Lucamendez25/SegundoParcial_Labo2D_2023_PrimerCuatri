@@ -83,6 +83,7 @@
             dataGridViewListaProductos.Margin = new Padding(4, 3, 4, 3);
             dataGridViewListaProductos.MultiSelect = false;
             dataGridViewListaProductos.Name = "dataGridViewListaProductos";
+            dataGridViewListaProductos.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.Blue;
             dataGridViewCellStyle3.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Regular, GraphicsUnit.Point);
@@ -143,7 +144,9 @@
             dataGridViewListaClientes.Location = new Point(492, 14);
             dataGridViewListaClientes.Margin = new Padding(4, 3, 4, 3);
             dataGridViewListaClientes.Name = "dataGridViewListaClientes";
+            dataGridViewListaClientes.ReadOnly = true;
             dataGridViewListaClientes.RowTemplate.Height = 25;
+            dataGridViewListaClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewListaClientes.Size = new Size(694, 373);
             dataGridViewListaClientes.TabIndex = 3;
             // 
@@ -169,7 +172,7 @@
             // buttonReponerStock
             // 
             buttonReponerStock.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonReponerStock.Location = new Point(13, 311);
+            buttonReponerStock.Location = new Point(14, 311);
             buttonReponerStock.Margin = new Padding(4, 3, 4, 3);
             buttonReponerStock.Name = "buttonReponerStock";
             buttonReponerStock.Size = new Size(106, 42);

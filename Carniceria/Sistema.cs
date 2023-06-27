@@ -249,6 +249,7 @@ namespace ClasesCarniceria
                     if (producto.CodigoProducto == auxProducto.CodigoProducto)
                     {
                         accesoDatosProducto.EliminarDato(producto.CodigoProducto);
+                        accesoDatosStockProducto.EliminarDato(producto.CodigoProducto);
                         return true;
                     }
                 }
