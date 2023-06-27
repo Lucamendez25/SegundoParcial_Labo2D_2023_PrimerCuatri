@@ -1,4 +1,4 @@
-## -------------------------"MUUUCHACHOS" CARNICERIA----------------------------
+## -----------------------"MUUUCHACHOS" CARNICERIA---------------------------
 Realizado por Méndez Luca
 
 
@@ -79,6 +79,19 @@ Utilice 7 tablas:
 - Productos (Almaceno toda la informacion que tienen los productos)
 - Stock Productos (Almaceno el stock del producto, mediante el Codigo del Producto)
 - Publicidad (Almaceno los path de las publicidades)
+
+
+![Anotación 2023-06-27 131540](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/f5e8aed8-283d-48fc-a329-014babdfff5d)
+
+
+![Anotación 2023-06-27 131559](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/60e6c0f1-e587-4a30-a0b9-28d3f66c5a8b)
+
+
+
+![Anotación 2023-06-27 131608](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/d1f241c5-6495-408f-bf71-28d70167bf09)
+
+
+
 
 ## Unit Testing
 ---
