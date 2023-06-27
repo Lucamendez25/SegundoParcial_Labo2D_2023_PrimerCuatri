@@ -19,6 +19,10 @@ namespace PrimerParcialLaboratorio2023
         FormLogin formLogin;
         List<Producto> listaProductos;
         FormInformacionDelProceso formInformacionDelProceso;
+        private Action mostrarFormularioProducto;
+        private delegate void MostrarFormInformacionDelProcesoDelegate(bool resultado);
+
+
 
 
         private List<Cliente> clientes;
@@ -27,7 +31,7 @@ namespace PrimerParcialLaboratorio2023
             InitializeComponent();
             ActualizarListaDeProductos();
             ActualizarListaDeClientes();
-
+            mostrarFormularioProducto = MostrarFormularioInformacionProducto;
         }
         public FormHeladera(Vendedor vendedor, FormLogin formLogin) : this()
         {
@@ -105,7 +109,7 @@ namespace PrimerParcialLaboratorio2023
 
         }
 
-        private void buttonInformacionProducto_Click(object sender, EventArgs e)
+        private void MostrarFormularioInformacionProducto()
         {
             try
             {
@@ -115,7 +119,17 @@ namespace PrimerParcialLaboratorio2023
                     FormInformacionDeProducto formInformacionDeProducto = new FormInformacionDeProducto(this, producto);
                     formInformacionDeProducto.ShowDialog();
                 }
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonInformacionProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                mostrarFormularioProducto.Invoke();
             }
             catch (Exception ex)
             {
@@ -162,16 +176,21 @@ namespace PrimerParcialLaboratorio2023
                 {
                     throw new Exception();
                 }
+                ActualizarListaDeProductos();
+                ActualizarDGVHeladera();
             }
-            catch (Exception ex)
+            catch (ArgumentOutOfRangeException) 
             {
-                MessageBox.Show(ex.Message);
+                string mensajeFallo = null;
+                MostrarInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
+            }
+            catch (Exception)
+            {
+                MostrarInformacionDelProceso(false);
             }
             finally
             {
                 numericUpDownKilos.Value = 0;
-                ActualizarListaDeProductos();
-                ActualizarDGVHeladera();
             }
 
         }
@@ -190,8 +209,7 @@ namespace PrimerParcialLaboratorio2023
 
                 if (formCrearProducto.ShowDialog() == DialogResult.OK)
                 {
-                    formInformacionDelProceso = new FormInformacionDelProceso(true);
-                    formInformacionDelProceso.ShowDialog();
+                    MostrarInformacionDelProceso(true);
                     ActualizarListaDeProductos();
                     ActualizarDGVHeladera();
                 }
@@ -199,20 +217,17 @@ namespace PrimerParcialLaboratorio2023
                 {
                     if (formCrearProducto.DialogResult == DialogResult.Abort)
                     {
-                        formInformacionDelProceso = new FormInformacionDelProceso("Se cancelo", false);
-                        formInformacionDelProceso.ShowDialog();
+                        MostrarInformacionDelProceso("Se cancelo", false);
                     }
                     else
                     {
-                        formInformacionDelProceso = new FormInformacionDelProceso(false);
-                        formInformacionDelProceso.ShowDialog();
+                        MostrarInformacionDelProceso(false);
                     }
                 }
             }
             catch (NoLlenoTodosLosCamposException ex)
             {
-                FormInformacionDelProceso formInformacionDelProceso = new FormInformacionDelProceso(ex.Message, false);
-                formInformacionDelProceso.ShowDialog();
+                MostrarInformacionDelProceso(ex.Message, false);
             }
 
             catch (Exception)
@@ -231,28 +246,25 @@ namespace PrimerParcialLaboratorio2023
                 {
                     if (Sistema.EliminarProductoDeLaBaseDeDatos(producto))
                     {
-                        formInformacionDelProceso = new FormInformacionDelProceso(true);
+                        MostrarInformacionDelProceso(true);
                         ActualizarListaDeProductos();
                         ActualizarDGVHeladera();
                     }
                     else
                     {
-                        formInformacionDelProceso = new FormInformacionDelProceso(false);
+                        MostrarInformacionDelProceso(false);
                     }
-                    formInformacionDelProceso.ShowDialog();
                 }
 
             }
             catch (ArgumentOutOfRangeException)
             {
                 string mensajeFallo = null;
-                formInformacionDelProceso = new FormInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
-                formInformacionDelProceso.ShowDialog();
-
+                MostrarInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
             }
             catch (Exception)
             {
-                throw;
+                MostrarInformacionDelProceso(false);
             }
         }
 
@@ -264,7 +276,7 @@ namespace PrimerParcialLaboratorio2023
                 FormModificarProducto formModificarProducto = new FormModificarProducto(producto);
                 if (formModificarProducto.ShowDialog() == DialogResult.OK)
                 {
-                    formInformacionDelProceso = new FormInformacionDelProceso(true);
+                    MostrarInformacionDelProceso(true);
                 }
                 ActualizarListaDeProductos();
                 ActualizarDGVHeladera();
@@ -272,19 +284,78 @@ namespace PrimerParcialLaboratorio2023
             catch (ArgumentOutOfRangeException)
             {
                 string mensajeFallo = null;
-                formInformacionDelProceso = new FormInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
-                formInformacionDelProceso.ShowDialog();
+                MostrarInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
             }
             catch (NoLlenoTodosLosCamposException ex)
             {
-                FormInformacionDelProceso formInformacionDelProceso = new FormInformacionDelProceso(ex.Message, false);
-                formInformacionDelProceso.ShowDialog();
+                MostrarInformacionDelProceso(ex.Message, false);
             }
             catch (Exception)
             {
                 throw;
             }
         }
+
+        private void buttonInformeDelCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Cliente cliente = (Cliente)dataGridViewListaClientes.SelectedRows[0].DataBoundItem;
+                string info = Sistema.LeerInformeDeComprasDelCliente(cliente);
+                FormInformacionDeComprasClientes formInformacionDeComprasClientes = new FormInformacionDeComprasClientes(info);
+                formInformacionDeComprasClientes.ShowDialog();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                string mensajeFallo = null;
+                MostrarInformacionDelProceso(mensajeFallo.NoEligioNingunProductoDataGridView(), false);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void buttonSerializador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Sistema.SerializarProductos())
+                {
+                    MostrarInformacionDelProceso(true);
+                }
+            }
+            catch (Exception)
+            {
+                MostrarInformacionDelProceso("No se pudo serializar", false);
+            }
+        }
+
+        private void buttonDeserealizador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormDeserealizador formDeserealizador = new FormDeserealizador();
+                formDeserealizador.ShowDialog();
+
+            }
+            catch (Exception)
+            {
+                MostrarInformacionDelProceso("No se pudo Desearealizar", false);
+            }
+        }
+
+        private void MostrarInformacionDelProceso(bool resultado)
+        {
+            FormInformacionDelProceso formInformacionDelProceso = new FormInformacionDelProceso(resultado);
+            formInformacionDelProceso.ShowDialog();
+        }
+        private void MostrarInformacionDelProceso(string mensaje, bool resultado)
+        {
+            FormInformacionDelProceso formInformacionDelProceso = new FormInformacionDelProceso(mensaje, resultado);
+            formInformacionDelProceso.ShowDialog();
+        }
+
 
         private void buttonInformacionProducto_MouseEnter(object sender, EventArgs e)
         {
@@ -345,5 +416,38 @@ namespace PrimerParcialLaboratorio2023
         {
             buttonVenderACliente.BackColor = Color.White;
         }
+
+        private void buttonInformeDelCliente_MouseEnter(object sender, EventArgs e)
+        {
+            buttonInformeDelCliente.BackColor = Color.Gold;
+        }
+
+        private void buttonInformeDelCliente_MouseLeave(object sender, EventArgs e)
+        {
+            buttonInformeDelCliente.BackColor = Color.White;
+        }
+
+        private void buttonSerializador_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSerializador.BackColor = Color.Gold;
+        }
+
+        private void buttonSerializador_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSerializador.BackColor = Color.White;
+        }
+
+        private void buttonDeserealizador_MouseEnter(object sender, EventArgs e)
+        {
+            buttonDeserealizador.BackColor = Color.Gold;
+        }
+
+        private void buttonDeserealizador_MouseLeave(object sender, EventArgs e)
+        {
+            buttonDeserealizador.BackColor = Color.White;
+        }
+
+
+
     }
 }

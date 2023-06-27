@@ -19,7 +19,7 @@ namespace PrimerParcialLaboratorio2023
         }
         private void buttonIngresar_Click(object sender, EventArgs e)
         {
-            Vendedor auxUsuario = Sistema.LoguearUsuario(this.textBoxEmail.Text, this.textBoxPassword.Text);
+            Usuario auxUsuario = Sistema.LoguearUsuario(this.textBoxEmail.Text, this.textBoxPassword.Text);
             if (auxUsuario != null)
             {
                 if (radioButtonCliente.Checked)

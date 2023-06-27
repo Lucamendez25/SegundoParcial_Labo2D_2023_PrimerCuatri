@@ -21,9 +21,7 @@ namespace PrimerParcialLaboratorio2023
         private ProovedorPublicidad proovedorPublicidad;
         private List<Publicidad> listaPublicidad;
         private double dineroCliente;
-        private Publicidad publicidadActual;
         private Producto productoSinStock;
-
         Venta venta;
 
         public FormVenta()
@@ -263,6 +261,27 @@ namespace PrimerParcialLaboratorio2023
             }
 
         }
+        private async Task CambiarPublicidadPeriodicamente()
+        {
+            while (true)
+            {
+                await Task.Delay(5000);
+                // Actualizar la publicidad actual con una nueva imagen
+                if (listaPublicidad.Count > 0)
+                {
+                    int indice = new Random().Next(0, listaPublicidad.Count);
+                    Publicidad nuevaPublicidad = listaPublicidad[indice];
+                    proovedorPublicidad.GenerarPublicidad(nuevaPublicidad);
+                }
+            }
+        }
+
+        private void ManejadorPublicidadCambio(Publicidad publicidad)
+        {
+            // Actualizar la imagen de la publicidad en el PictureBox
+            PictureBoxPublicidad.ImageLocation = publicidad.path;
+        }
+
         private void FormVenta_FormClosed(object sender, FormClosedEventArgs e)
         {
             formLogin.Show();
@@ -297,26 +316,5 @@ namespace PrimerParcialLaboratorio2023
             buttonFinalizarCompra.BackColor = Color.Gold;
         }
 
-        private async Task CambiarPublicidadPeriodicamente()
-        {
-            while (true)
-            {
-                await Task.Delay(5000);
-                // Actualizar la publicidad actual con una nueva imagen
-                if (listaPublicidad.Count > 0)
-                {
-                    int indice = new Random().Next(0, listaPublicidad.Count);
-                    Publicidad nuevaPublicidad = listaPublicidad[indice];
-                    publicidadActual = nuevaPublicidad;
-                    Invoke((Action)(() => proovedorPublicidad.GenerarPublicidad(publicidadActual)));
-                }
-            }
-        }
-
-        private void ManejadorPublicidadCambio(Publicidad publicidad)
-        {
-            // Actualizar la imagen de la publicidad en el PictureBox
-            PictureBoxPublicidad.ImageLocation = publicidad.path;
-        }
     }
 }

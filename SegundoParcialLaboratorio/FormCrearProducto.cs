@@ -36,7 +36,7 @@ namespace SegundoParcialLaboratorio
                 }
                 Producto producto = new Producto(codigoProducto, nombre, tipo, precioPorKilo);
                 Sistema.AgregarProducto(producto);
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }
             catch (NullReferenceException)
             {
@@ -46,11 +46,6 @@ namespace SegundoParcialLaboratorio
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void FormCrearProducto_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.DialogResult = DialogResult.Abort;
         }
     }
 }

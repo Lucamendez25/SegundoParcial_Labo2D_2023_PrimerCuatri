@@ -65,7 +65,6 @@ namespace PrimerParcialLaboratorio2023
                 if (Sistema.CalcularACobrarCliente(cliente, venta.ObtenerTotalVenta(), esCompraConCredito))
                 {
 
-                    ArchivosDeTexto.AgregarAlArchivo(venta.Detalles, venta);
                     StringBuilder sb = new StringBuilder();
                     sb.AppendLine("Se realizo la compra con exito");
                     sb.AppendLine($"Le restan: {cliente.Dinero} pesos.");
@@ -74,6 +73,7 @@ namespace PrimerParcialLaboratorio2023
                         sb.AppendLine("Al haber sido con credito, se le cobro 5% recarga...");
                     }
                     Sistema.DisminuyoStock(venta);
+                    Sistema.GuardoVentaEnUnArchivo(venta, cliente);
                     venta.Detalles.Clear();
                     FormAgradecimiento formAgradecimiento = new FormAgradecimiento();
                     formAgradecimiento.ShowDialog();

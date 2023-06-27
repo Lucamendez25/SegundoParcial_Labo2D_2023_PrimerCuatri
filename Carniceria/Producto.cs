@@ -28,6 +28,11 @@ namespace ClasesCarniceria
         public string ImagenProducto { get; set; }
         public double Stock { get => stock; set => stock = value; }
 
+
+        public Producto()
+        {
+        }
+
         public Producto(string nombre, eTipoProducto tipo)
         {
             this.nombre = nombre;
@@ -42,11 +47,12 @@ namespace ClasesCarniceria
 
         public bool VerificoQueHayaStock(Producto producto, double peso) 
         {
-            if (producto.Stock > peso) 
+            if (producto.Stock >= peso) 
             {
                 return true;
             }
             return false;
         }
+ 
     }
 }

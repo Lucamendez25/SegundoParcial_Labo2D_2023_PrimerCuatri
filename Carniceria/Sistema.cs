@@ -10,6 +10,8 @@ namespace ClasesCarniceria
         static AccesoDatosVendedor accesoDatosVendedor = new AccesoDatosVendedor();
         static AccesoDatosStockProducto accesoDatosStockProducto = new AccesoDatosStockProducto();
         static AccesoDatosPublicidad accesoDatosPublicidad = new AccesoDatosPublicidad();
+        static SerializadorJson<List<Producto>> serializadorJson = new SerializadorJson<List<Producto>>("Productos.json");
+        static SerializadorXml<List<Producto>> serializadorXml = new SerializadorXml<List<Producto>>("Productos.xml");
 
         private const double RECARGA_CREDITO = 0.05;
         static Sistema()
@@ -24,14 +26,14 @@ namespace ClasesCarniceria
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
-        /// <returns>vendedor</returns>
-        public static Vendedor LoguearUsuario(string email, string password)
+        /// <returns>Usuario</returns>
+        public static Usuario LoguearUsuario(string email, string password)
         {
-            Vendedor usuarioLogueado = null;
+            Usuario usuarioLogueado = null;
 
             if (ValidarCamposLogin(email, password))
             {
-                foreach (Vendedor auxUsuario in accesoDatosUsuario.ObtenerListaDato())
+                foreach (Usuario auxUsuario in accesoDatosUsuario.ObtenerListaDato())
                 {
                     if (auxUsuario.Email == email && auxUsuario.CheckearPassword(password))
                     {
@@ -62,7 +64,7 @@ namespace ClasesCarniceria
         #region Metodos Cliente
 
 
-        
+
         /// <summary>
         ///  Llama a la base de datos, y le pide cada uno de los clientes
         /// Y los almacena en una lista, para luego retornarla
@@ -165,6 +167,21 @@ namespace ClasesCarniceria
                     break;
                 }
             }
+        }
+        /// <summary>
+        /// Agrega en un archivo .txt las ventas de todos los clientes
+        /// </summary>
+        /// <param name="venta"></param>
+        /// <param name="cliente"></param>
+        public static void GuardoVentaEnUnArchivo(Venta venta, Cliente cliente)
+        {
+            ArchivosDeTexto.AgregarAlArchivo(venta.Detalles, venta, cliente);
+        }
+
+        public static string LeerInformeDeComprasDelCliente(Cliente cliente)
+        {
+            string info = ArchivosDeTexto.LeerArchivoCliente(cliente);
+            return info;
         }
         #endregion
 
@@ -384,7 +401,10 @@ namespace ClasesCarniceria
                     if (productoEncontrado != null)
                     {
                         productoEncontrado.Stock -= item.Peso;
-                        accesoDatosStockProducto.ModificarDato(productoEncontrado.CodigoProducto, productoEncontrado.Stock);
+                        if (!SetearStock(productoEncontrado, productoEncontrado.Stock))
+                        {
+                            throw new Exception();
+                        }
                     }
                 }
             }
@@ -396,38 +416,7 @@ namespace ClasesCarniceria
         }
 
         /// <summary>
-        /// Disminuyo el stock. Esta es utilizada para la venta por unidad (Funcion utilizada por vendedor)
-        /// </summary>
-        /// <param name="producto"></param>
-        /// <param name="peso"></param>
-        /// <returns></returns>
-        public static bool DisminuyoStock(Producto producto, double peso)
-        {
-            try
-            {
-                Producto productoEncontrado = ObtenerTodosLosProductosDeLaBaseDeDatos().Find(p => p.CodigoProducto == producto.CodigoProducto);
-                if (productoEncontrado != null)
-                {
-                    if (!producto.VerificoQueHayaStock(producto, 1))
-                    {
-                        throw new Exception();
-                    }
-                    if (SetearStock(productoEncontrado, peso))
-                    {
-                        return true;
-                    }
-                }
-                return false;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }
-
-        /// <summary>
-        /// Modifico stock en la Base de Datos 
+        /// Modifico stock con los kilos que le mando, en la Base de Datos 
         /// </summary>
         /// <param name="producto"></param>
         /// <param name="kilos"></param>
@@ -456,6 +445,10 @@ namespace ClasesCarniceria
         {
             try
             {
+                if (string.IsNullOrEmpty(pathImagen))
+                {
+                    throw new Exception();
+                }
                 accesoDatosProducto.ModificarDato(producto.CodigoProducto, pathImagen);
                 return true;
             }
@@ -464,6 +457,50 @@ namespace ClasesCarniceria
                 return false;
             }
         }
+
+        public static bool SerializarProductos() 
+        {
+            try
+            {
+                List<Producto> productos = ObtenerTodosLosProductosDeLaBaseDeDatos();
+                serializadorJson.Serializar(productos);
+                serializadorXml.Serializar(productos);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public static List<Producto> DesearializarProductosXml()
+        {
+            List<Producto> productos = new List<Producto>();
+            try
+            {
+                productos = serializadorXml.Deserializar();
+                return productos;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
+
+        public static List<Producto> DesearializarProductosJson()
+        {
+            List<Producto> productos = new List<Producto>();
+            try
+            {
+                productos = serializadorJson.Deserializar();
+                return productos;
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+        }
+
+
         #endregion
 
         #region Métodos Publicidad
@@ -484,5 +521,7 @@ namespace ClasesCarniceria
             }
         }
         #endregion
+
+
     }
 }

@@ -34,8 +34,10 @@
             labelUsuario = new Label();
             buttonVender = new Button();
             pictureBox1 = new PictureBox();
+            numericUpDownKilos = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownKilos).BeginInit();
             SuspendLayout();
             // 
             // dataGridViewListaProductos
@@ -91,12 +93,24 @@
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
+            // numericUpDownKilos
+            // 
+            numericUpDownKilos.BackColor = Color.Gold;
+            numericUpDownKilos.DecimalPlaces = 1;
+            numericUpDownKilos.Font = new Font("Modern No. 20", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            numericUpDownKilos.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDownKilos.Location = new Point(597, 201);
+            numericUpDownKilos.Name = "numericUpDownKilos";
+            numericUpDownKilos.Size = new Size(120, 28);
+            numericUpDownKilos.TabIndex = 7;
+            // 
             // FormVenderProductoACliente
             // 
             AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(850, 630);
+            Controls.Add(numericUpDownKilos);
             Controls.Add(pictureBox1);
             Controls.Add(buttonVender);
             Controls.Add(labelUsuario);
@@ -111,6 +125,7 @@
             Load += FormVenderProductoACliente_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaProductos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownKilos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,5 +136,6 @@
         private Label labelUsuario;
         private Button buttonVender;
         private PictureBox pictureBox1;
+        private NumericUpDown numericUpDownKilos;
     }
 }

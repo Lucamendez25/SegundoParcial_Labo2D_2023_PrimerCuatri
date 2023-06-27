@@ -93,6 +93,16 @@ namespace SegundoParcialLaboratorio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Vaca_Original__4____copia {
+            get {
+                object obj = ResourceManager.GetObject("Vaca Original (4) - copia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap vacio {
             get {
                 object obj = ResourceManager.GetObject("vacio", resourceCulture);

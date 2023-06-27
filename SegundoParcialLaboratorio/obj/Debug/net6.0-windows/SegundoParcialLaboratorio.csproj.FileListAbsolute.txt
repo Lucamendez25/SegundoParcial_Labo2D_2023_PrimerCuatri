@@ -44,3 +44,5 @@ C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\o
 C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\obj\Debug\net6.0-windows\SegundoParcialLaboratorio.FormInformacionDelProceso.resources
 C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\obj\Debug\net6.0-windows\SegundoParcialLaboratorio.FormConfirmar.resources
 C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\obj\Debug\net6.0-windows\SegundoParcialLaboratorio.FormModificarProducto.resources
+C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\obj\Debug\net6.0-windows\SegundoParcialLaboratorio.FormInformacionDeComprasClientes.resources
+C:\Users\Luca\source\repos\SegundoParcialLaboratorio\SegundoParcialLaboratorio\obj\Debug\net6.0-windows\SegundoParcialLaboratorio.FormDeserealizador.resources

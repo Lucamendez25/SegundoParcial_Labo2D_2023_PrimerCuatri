@@ -45,6 +45,9 @@
             buttonAgregarProducto = new Button();
             buttonEliminar = new Button();
             buttonModificar = new Button();
+            buttonInformeDelCliente = new Button();
+            buttonSerializador = new Button();
+            buttonDeserealizador = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewListaClientes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -92,7 +95,7 @@
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dataGridViewListaProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewListaProductos.RowTemplate.Height = 25;
-            dataGridViewListaProductos.Size = new Size(192, 373);
+            dataGridViewListaProductos.Size = new Size(209, 373);
             dataGridViewListaProductos.TabIndex = 0;
             dataGridViewListaProductos.TabStop = false;
             // 
@@ -226,12 +229,53 @@
             buttonModificar.MouseEnter += buttonModificar_MouseEnter;
             buttonModificar.MouseLeave += buttonModificar_MouseLeave;
             // 
+            // buttonInformeDelCliente
+            // 
+            buttonInformeDelCliente.Font = new Font("Modern No. 20", 11.249999F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonInformeDelCliente.Location = new Point(372, 223);
+            buttonInformeDelCliente.Name = "buttonInformeDelCliente";
+            buttonInformeDelCliente.Size = new Size(112, 45);
+            buttonInformeDelCliente.TabIndex = 11;
+            buttonInformeDelCliente.Text = "Informe Del Cliente";
+            buttonInformeDelCliente.UseVisualStyleBackColor = true;
+            buttonInformeDelCliente.Click += buttonInformeDelCliente_Click;
+            buttonInformeDelCliente.MouseEnter += buttonInformeDelCliente_MouseEnter;
+            buttonInformeDelCliente.MouseLeave += buttonInformeDelCliente_MouseLeave;
+            // 
+            // buttonSerializador
+            // 
+            buttonSerializador.Location = new Point(127, 393);
+            buttonSerializador.Name = "buttonSerializador";
+            buttonSerializador.Size = new Size(91, 29);
+            buttonSerializador.TabIndex = 12;
+            buttonSerializador.Text = "Serializador";
+            buttonSerializador.UseVisualStyleBackColor = true;
+            buttonSerializador.Click += buttonSerializador_Click;
+            buttonSerializador.MouseEnter += buttonSerializador_MouseEnter;
+            buttonSerializador.MouseLeave += buttonSerializador_MouseLeave;
+            // 
+            // buttonDeserealizador
+            // 
+            buttonDeserealizador.Font = new Font("Modern No. 20", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonDeserealizador.Location = new Point(236, 393);
+            buttonDeserealizador.Name = "buttonDeserealizador";
+            buttonDeserealizador.Size = new Size(100, 29);
+            buttonDeserealizador.TabIndex = 13;
+            buttonDeserealizador.Text = "Deserealizador";
+            buttonDeserealizador.UseVisualStyleBackColor = true;
+            buttonDeserealizador.Click += buttonDeserealizador_Click;
+            buttonDeserealizador.MouseEnter += buttonDeserealizador_MouseEnter;
+            buttonDeserealizador.MouseLeave += buttonDeserealizador_MouseLeave;
+            // 
             // FormHeladera
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(1199, 467);
+            Controls.Add(buttonDeserealizador);
+            Controls.Add(buttonSerializador);
+            Controls.Add(buttonInformeDelCliente);
             Controls.Add(buttonModificar);
             Controls.Add(buttonEliminar);
             Controls.Add(buttonAgregarProducto);
@@ -272,5 +316,8 @@
         private Button buttonAgregarProducto;
         private Button buttonEliminar;
         private Button buttonModificar;
+        private Button buttonInformeDelCliente;
+        private Button buttonSerializador;
+        private Button buttonDeserealizador;
     }
 }

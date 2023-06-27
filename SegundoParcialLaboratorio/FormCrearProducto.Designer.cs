@@ -138,7 +138,6 @@
             Name = "FormCrearProducto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AGREGAR";
-            FormClosing += FormCrearProducto_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

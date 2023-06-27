@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClasesCarniceria.TipoUsuario;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,19 @@ namespace ClasesCarniceria
     {
         public static StreamWriter sw;
         public static StreamReader sr;
-        public static string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+        public static string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Archivos");
+
+
 
         /// <summary>
         /// Genera el directorio para guardar el archivo
         /// </summary>
         static ArchivosDeTexto()
         {
-            if (!Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Archivos"))
+            if (!Directory.Exists(folderPath))
             {
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Archivos");
+                Directory.CreateDirectory(folderPath);
             }
-            ArchivosDeTexto.path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Archivos\\Productos.txt";
         }
 
         /// <summary>
@@ -29,20 +31,25 @@ namespace ClasesCarniceria
         /// </summary>
         /// <param name="lista"></param>
         /// <returns></returns>
-        public static bool AgregarAlArchivo(List<DetalleVenta> lista, Venta venta)
+        public static bool AgregarAlArchivo(List<DetalleVenta> lista, Venta venta, Cliente cliente)
         {
             bool agrego = false;
             try
             {
-                ArchivosDeTexto.sw = new StreamWriter(ArchivosDeTexto.path, true);
-                foreach (DetalleVenta item in lista)
+                string clientePath = Path.Combine(folderPath, cliente.Id + "_" + cliente.Nombre + ".txt");
+                using (StreamWriter sw = new StreamWriter(clientePath, true))
                 {
-                    ArchivosDeTexto.sw.WriteLine(item.ToString());
+                    sw.WriteLine("");
+                    sw.WriteLine($"Id: {cliente.Id} User {cliente.Nombre}");
+                    foreach (DetalleVenta item in lista)
+                    {
+                        sw.WriteLine(item.ToString());
+                    }
+                    sw.WriteLine("TOTAL DE LA VENTA: " + venta.ObtenerTotalVenta().ToString());
                 }
-                ArchivosDeTexto.sw.WriteLine("TOTAL DE LA VENTA: " + venta.ObtenerTotalVenta().ToString());
                 agrego = true;
             }
-            catch
+            catch (Exception)
             {
                 agrego = false;
             }
@@ -52,6 +59,29 @@ namespace ClasesCarniceria
                     ArchivosDeTexto.sw.Close();
             }
             return agrego;
+        }
+
+        public static string LeerArchivoCliente(Cliente cliente)
+        {
+            string contenidoArchivo = string.Empty;
+            string clientePath = Path.Combine(folderPath, cliente.Id + "_" + cliente.Nombre + ".txt");
+            try
+            {
+                if (File.Exists(clientePath))
+                {
+                    contenidoArchivo = File.ReadAllText(clientePath);
+                }
+                else
+                {
+                    contenidoArchivo = "El cliente no tiene registros de compras.";
+                }
+            }
+            catch (Exception)
+            {
+                contenidoArchivo = "Error al leer el archivo del cliente.";
+            }
+
+            return contenidoArchivo;
         }
     }
 }
