@@ -1,4 +1,4 @@
-## -----------------------"MUUUCHACHOS" CARNICERIA---------------------------
+## ----------------------"MUUUCHACHOS" CARNICERIA---------------------------
 Realizado por Méndez Luca
 
 
