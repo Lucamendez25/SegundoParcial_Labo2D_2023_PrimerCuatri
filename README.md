@@ -28,6 +28,7 @@ Ya que hace menos de un año, la selección Argentina de Fútbol salió campeona
 - [Delegados](#Delegados)
 - [Task](#Task)
 - [Eventos](#Eventos)
+- [Imágenes](#Imágenes)
 
 ## Interfaces y Generics
 ---
@@ -80,17 +81,11 @@ Utilice 7 tablas:
 - Stock Productos (Almaceno el stock del producto, mediante el Codigo del Producto)
 - Publicidad (Almaceno los path de las publicidades)
 
-
 ![Anotación 2023-06-27 131540](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/f5e8aed8-283d-48fc-a329-014babdfff5d)
-
 
 ![Anotación 2023-06-27 131559](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/60e6c0f1-e587-4a30-a0b9-28d3f66c5a8b)
 
-
-
 ![Anotación 2023-06-27 131608](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/d1f241c5-6495-408f-bf71-28d70167bf09)
-
-
 
 
 ## Unit Testing
@@ -121,3 +116,22 @@ ejemplo :
             PublicidadCambio?.Invoke(publicidad);
         }
     }
+```
+## Imágenes
+# Login:
+---
+
+![Anotación 2023-06-27 173341](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/3a601c09-f9df-4a38-a059-4642c116b955)
+
+# Cliente:
+![Anotación 2023-06-27 164636 (2)](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/244ea1a6-b195-4e35-888d-fa55582456ef)
+![Anotación 2023-06-27 173415](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/816826cd-e42c-4990-ab69-bfbdd82900cc)
+![Anotación 2023-06-27 173427](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/008fd042-f56f-48dd-8089-bc76144a433e)
+![Anotación 2023-06-27 173444](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/38148b2a-50cb-4263-bbdc-1e07daefa424)
+# Vendedor:
+![Anotación 2023-06-27 173504](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/17ffc871-adfd-4c39-ad75-35eae8cb0532)
+![Anotación 2023-06-27 173600](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/a2e27370-b439-4894-8e54-3e65bcfd1ac8)
+![Anotación 2023-06-27 173539](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/8fc446a6-9971-4b28-bc0a-97230a3c7cce)
+![Anotación 2023-06-27 173517](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/30a3511b-5b9d-440a-a717-b1effc1b3f53)
+![Anotación 2023-06-27 173614](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/65dd3e74-93c2-4756-8fdd-ed72953f8787)
+
