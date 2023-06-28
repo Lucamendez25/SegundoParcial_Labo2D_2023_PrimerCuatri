@@ -1,9 +1,7 @@
 ## ----------------------"MUUUCHACHOS" CARNICERIA---------------------------
 Realizado por Méndez Luca
 
-
-
-![Imagen MUUUCHACHOS](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/8547de93-9a18-458b-997a-bf71479f68d5)
+![Imagen de WhatsApp 2023-06-28 a las 12 05 51](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/f273c7e9-d13f-40e2-8cb8-a6130861c638)
 
 
 
