@@ -1,8 +1,8 @@
 ## ----------------------"MUUUCHACHOS" CARNICERIA---------------------------
 Realizado por Méndez Luca
 
-![Imagen de WhatsApp 2023-06-28 a las 12 05 51](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/f273c7e9-d13f-40e2-8cb8-a6130861c638)
 
+![Anotación 2023-06-27 173341](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/c49dcb93-8966-439e-9258-c357381bb33c)
 
 
   
@@ -79,11 +79,9 @@ Utilice 7 tablas:
 - Stock Productos (Almaceno el stock del producto, mediante el Codigo del Producto)
 - Publicidad (Almaceno los path de las publicidades)
 
-![Anotación 2023-06-27 131540](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/f5e8aed8-283d-48fc-a329-014babdfff5d)
-
-![Anotación 2023-06-27 131559](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/60e6c0f1-e587-4a30-a0b9-28d3f66c5a8b)
-
-![Anotación 2023-06-27 131608](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/d1f241c5-6495-408f-bf71-28d70167bf09)
+![Anotación 2023-06-27 131540](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/5a6e50c5-daf0-4103-8dc1-516c4cb71a5d)
+![Anotación 2023-06-27 131608](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/b6d37150-a14a-410e-9acf-f735269d0caf)
+![Anotación 2023-06-27 131559](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/23fc6e00-8d9d-433e-851f-99dd6b522f20)
 
 
 ## Unit Testing
@@ -119,17 +117,23 @@ ejemplo :
 # Login:
 ---
 
-![Anotación 2023-06-27 173341](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/3a601c09-f9df-4a38-a059-4642c116b955)
+![Anotación 2023-06-27 173341](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/2bf84c4f-b4e0-476c-9b00-1e9300ff921b)
+
 
 # Cliente:
-![Anotación 2023-06-27 164636 (2)](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/244ea1a6-b195-4e35-888d-fa55582456ef)
-![Anotación 2023-06-27 173415](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/816826cd-e42c-4990-ab69-bfbdd82900cc)
-![Anotación 2023-06-27 173427](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/008fd042-f56f-48dd-8089-bc76144a433e)
-![Anotación 2023-06-27 173444](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/38148b2a-50cb-4263-bbdc-1e07daefa424)
+![Anotación 2023-06-27 164636 (2)](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/e2fe2b56-f9ba-4545-bccc-c5cba9e5b48a)
+![Anotación 2023-06-27 173415](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/d4fcc690-3b99-4fce-a7d5-a47f8271a3b7)
+![Anotación 2023-06-27 173427](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/d93a2170-de8a-4fad-ac57-184e1acd0a88)
+![Anotación 2023-06-27 173444](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/da517c26-d1b9-48dc-84c4-dea1fdddf65b)
+
+
+
+
 # Vendedor:
-![Anotación 2023-06-27 173504](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/17ffc871-adfd-4c39-ad75-35eae8cb0532)
-![Anotación 2023-06-27 173600](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/a2e27370-b439-4894-8e54-3e65bcfd1ac8)
-![Anotación 2023-06-27 173539](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/8fc446a6-9971-4b28-bc0a-97230a3c7cce)
-![Anotación 2023-06-27 173517](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/30a3511b-5b9d-440a-a717-b1effc1b3f53)
-![Anotación 2023-06-27 173614](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/65dd3e74-93c2-4756-8fdd-ed72953f8787)
+![Anotación 2023-06-27 173504](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/052fcf68-4587-4e86-9918-782b17617910)
+![Anotación 2023-06-27 173600](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/deb92e5b-a0c4-471e-b780-0b46a69b2b8e)
+![Anotación 2023-06-27 173539](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/5db21b4d-b0d9-4b5e-a4fa-9e5e825e64c9)
+![Anotación 2023-06-27 173517](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/97bd78e9-a068-48b3-8591-ab5e1fc471de)
+![Anotación 2023-06-27 173614](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/a263caeb-43ad-47b5-a595-5d370b7b9d4b)
+
 
