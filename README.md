@@ -2,7 +2,7 @@
 Realizado por Méndez Luca
 
 
-![Anotación 2023-06-27 173341](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/c49dcb93-8966-439e-9258-c357381bb33c)
+![Imagen MUUUCHACHOS](https://github.com/Lucamendez25/SegundoParcial_Labo2D_2023_PrimerCuatri/assets/98615614/e9f25f65-6c7d-4ae6-9388-a6d4265f28da)
 
 
   
