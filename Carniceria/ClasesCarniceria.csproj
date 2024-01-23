@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MACTrackBarLib.dll" Version="1.0.2" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
   </ItemGroup>
 
